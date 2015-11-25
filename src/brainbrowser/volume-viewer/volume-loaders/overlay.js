@@ -325,16 +325,13 @@
             current = image_iter[i];
 
             //Red
-            target_data[pixel] = target_data[pixel] * alpha +
-                                  image_data[current] * alphas[i];
+            target_data[pixel] = image_data[current] === 0 ? target_data[pixel] : target_data[pixel] * alpha + image_data[current] * alphas[i];
 
             //Green
-            target_data[pixel + 1] = target_data[pixel + 1] * alpha +
-                                      image_data[current + 1] * alphas[i];
+            target_data[pixel + 1] = image_data[current + 1] === 0 ? target_data[pixel + 1] : target_data[pixel + 1] * alpha + image_data[current + 1] * alphas[i];
 
             //Blue
-            target_data[pixel + 2] = target_data[pixel + 2] * alpha +
-                                      image_data[current + 2] * alphas[i];
+            target_data[pixel + 2] = image_data[current + 2] === 0 ? target_data[pixel + 2] : target_data[pixel + 2] * alpha + image_data[current + 2] * alphas[i];
 
             target_data[pixel + 3] = 255;
             alpha += alphas[i];

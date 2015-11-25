@@ -130,9 +130,9 @@
     header.yspace.start = ystart / denom;
     header.zspace.start = zstart / denom;
 
-    header.xspace.direction_cosines = x_dir_cosines;
-    header.yspace.direction_cosines = y_dir_cosines;
-    header.zspace.direction_cosines = z_dir_cosines;
+    header.xspace.direction_cosines = [1,0,0];//x_dir_cosines;
+    header.yspace.direction_cosines = [0,1,0];//y_dir_cosines;
+    header.zspace.direction_cosines = [0,0,1];//z_dir_cosines;
   };
 
   function parseNifti1Header(raw_data, callback) {
