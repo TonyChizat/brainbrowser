@@ -323,7 +323,7 @@
             image_data = image.data;
 
             current = image_iter[i];
-
+            //for our purpose (overlay mask and anatomical image)nul data can be ignored for a better display result.
             //Red
             target_data[pixel] = image_data[current] === 0 ? target_data[pixel] : target_data[pixel] * alpha + image_data[current] * alphas[i];
 

@@ -129,7 +129,8 @@
     header.xspace.start = xstart / denom;
     header.yspace.start = ystart / denom;
     header.zspace.start = zstart / denom;
-
+    //transform was calculated but not perform to the nifti volume, but overlay perform this transform
+    //quick fix, replace calculated transform by identity matrix
     header.xspace.direction_cosines = [1,0,0];//x_dir_cosines;
     header.yspace.direction_cosines = [0,1,0];//y_dir_cosines;
     header.zspace.direction_cosines = [0,0,1];//z_dir_cosines;
