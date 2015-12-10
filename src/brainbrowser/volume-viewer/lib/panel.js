@@ -345,6 +345,8 @@
           cursor = panel.getCursorPosition();
           x = cursor.x;
           y = cursor.y;
+        } else {
+          y = y + document.getElementById("left_sidebar").scrollTop ;
         }
 
         slice_x = Math.round((x - origin.x) / zoom / Math.abs(slice.width_space.step));
